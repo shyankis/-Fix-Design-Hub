@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- HEADER -->
   <header>
     <div class="logo" style="display:flex;align-items:center;">
       <img src="logo.png" alt="Fix&Design Hub Logo" style="height:40px; margin-right:10px;" />
@@ -23,34 +24,45 @@
       <button class="menu-toggle">☰</button>
     </nav>
   </header>
-  <!-- HERO Section -->
-  <section id="home" class="hero">
+
+  <!-- HERO -->
+  <section id="home" class="hero fade-in">
     <h1>Welcome to Fix&Design Hub</h1>
     <p>Your one-stop solution for design, fixing, and creativity.</p>
     <a href="#services" class="btn">Explore Services</a>
   </section>
-  <!-- SERVICES Section -->
-  <section id="services" class="section">
+
+  <!-- SERVICES -->
+  <section id="services" class="section fade-in">
     <h2>Our Services</h2>
     <div class="card-container">
+
+      <!-- Web Design Coming Soon -->
       <div class="card">
+        <div class="coming-soon">🚀 Coming Soon</div>
         <h3>Web Design</h3>
         <p>Modern, responsive, and tailored designs for your brand.</p>
       </div>
+
+      <!-- Repairs & Fixes -->
       <div class="card">
         <h3>Repairs & Fixes</h3>
-        <img src="mobile-1.webp" alt="Mobile Repair" style="width:100%; max-width:280px; display:block; margin:10px auto; border-radius:6px;" />
+        <img src="mobile-1.webp" alt="Mobile Repair" class="service-img" />
         <p>Quick solutions to technical and digital issues.</p>
       </div>
+
+      <!-- Consultation -->
       <div class="card">
         <h3>Consultation</h3>
-        <img src="Consultation-1.png" alt="Mobile Repair" style="width:100%; max-width:280px; display:block; margin:10px auto; border-radius:6px;" />
+        <img src="Consultation-1.png" alt="Consultation" class="service-img" />
         <p>Guidance to make your digital journey smooth and creative.</p>
       </div>
+
     </div>
   </section>
-  <!-- PORTFOLIO Section -->
-  <section id="portfolio" class="section">
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="section fade-in">
     <h2>Portfolio</h2>
     <p>Some of our latest works</p>
     <div class="portfolio-grid">
@@ -59,8 +71,9 @@
       <div class="portfolio-item">Project 3</div>
     </div>
   </section>
-  <!-- BLOG Section -->
-  <section id="blog" class="section">
+
+  <!-- BLOG -->
+  <section id="blog" class="section fade-in">
     <h2>Blog</h2>
     <div class="blog-container">
       <article class="blog-post">
@@ -73,8 +86,9 @@
       </article>
     </div>
   </section>
-  <!-- CONTACT Section -->
-  <section id="contact" class="section contact">
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact fade-in">
     <h2>Contact Us</h2>
     <form>
       <input type="text" placeholder="Your Name" required />
@@ -83,11 +97,12 @@
       <button type="submit">Send Message</button>
     </form>
   </section>
+
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Fix&Design Hub. All rights reserved.</p>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
-
-
