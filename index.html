@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fix Design Hub - Professional Tech & Design Services</title>
+    <title>Fix Design Hub - Shyanki Sakhare | Professional Tech & Design Services</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,204 +21,266 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header Section -->
-    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <div class="container mx-auto px-6 py-4">
-            <nav class="flex items-center justify-between">
-                <a href="#" class="text-2xl font-bold text-white">
-                    Fix Design<span class="text-cyan-400">Hub</span>
-                </a>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300">Home</a>
-                    <a href="#services" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300">Services</a>
-                    <a href="#about" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300">About Me</a>
-                    <a href="#research" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300">Research</a>
-                    <a href="#contact" class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-5 py-2 rounded-lg transition-all duration-300 shadow-lg shadow-cyan-500/20">Contact Me</a>
-                </div>
+    <!-- Animated Particle Background -->
+    <canvas id="particle-canvas" class="fixed top-0 left-0 w-full h-full z-0"></canvas>
 
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-white focus:outline-none">
-                        <i data-lucide="menu" class="h-6 w-6"></i>
-                    </button>
-                </div>
-            </nav>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/90 backdrop-blur-sm">
-            <a href="#home" class="block text-center py-3 px-4 text-sm text-slate-300 hover:bg-cyan-500 hover:text-white">Home</a>
-            <a href="#services" class="block text-center py-3 px-4 text-sm text-slate-300 hover:bg-cyan-500 hover:text-white">Services</a>
-            <a href="#about" class="block text-center py-3 px-4 text-sm text-slate-300 hover:bg-cyan-500 hover:text-white">About Me</a>
-            <a href="#research" class="block text-center py-3 px-4 text-sm text-slate-300 hover:bg-cyan-500 hover:text-white">Research</a>
-            <a href="#contact" class="block text-center py-3 px-4 text-sm text-slate-300 hover:bg-cyan-500 hover:text-white">Contact Me</a>
-        </div>
-    </header>
+    <!-- Main Content Wrapper -->
+    <div class="relative z-10">
+        <!-- Header Section -->
+        <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+            <div class="container mx-auto px-6 py-4">
+                <nav class="flex items-center justify-between">
+                    <a href="#" class="text-2xl font-bold text-white">
+                        Fix Design<span class="text-cyan-400">Hub</span>
+                    </a>
+                    
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#home" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300">Home</a>
+                        <a href="#services" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300">Services</a>
+                        <a href="#about" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300">About Me</a>
+                        <a href="#research" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300">Research</a>
+                        <a href="#contact" class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-5 py-2 rounded-lg transition-all duration-300 shadow-lg shadow-cyan-500/20">Contact Me</a>
+                    </div>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="min-h-screen flex items-center pt-24" style="background-image: url('https://placehold.co/1920x1080/0a0a0a/111827?text='); background-size: cover; background-position: center;">
-            <div class="absolute inset-0 bg-black/70"></div>
-            <div class="container mx-auto px-6 text-center relative z-10">
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4 animate-fadeInUp" style="animation-delay: 200ms;">
-                    Expert Solutions in <span class="text-cyan-400">Tech & Design</span>
-                </h1>
-                <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8 animate-fadeInUp" style="animation-delay: 400ms;">
-                    I provide professional services ranging from technical repairs and creative graphic design to in-depth academic research. Let's build something great together.
-                </p>
-                <a href="#contact" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-transform duration-300 hover:scale-105 inline-block shadow-lg shadow-cyan-500/30 animate-fadeInUp" style="animation-delay: 600ms;">
-                    Get a Free Quote
-                </a>
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" class="text-white focus:outline-none">
+                            <i data-lucide="menu" class="h-6 w-6"></i>
+                        </button>
+                    </div>
+                </nav>
             </div>
-        </section>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-gray-900/90 backdrop-blur-sm">
+                <a href="#home" class="block text-center py-3 px-4 text-sm text-slate-300 hover:bg-cyan-500 hover:text-white">Home</a>
+                <a href="#services" class="block text-center py-3 px-4 text-sm text-slate-300 hover:bg-cyan-500 hover:text-white">Services</a>
+                <a href="#about" class="block text-center py-3 px-4 text-sm text-slate-300 hover:bg-cyan-500 hover:text-white">About Me</a>
+                <a href="#research" class="block text-center py-3 px-4 text-sm text-slate-300 hover:bg-cyan-500 hover:text-white">Research</a>
+                <a href="#contact" class="block text-center py-3 px-4 text-sm text-slate-300 hover:bg-cyan-500 hover:text-white">Contact Me</a>
+            </div>
+        </header>
 
-        <!-- Services Section -->
-        <section id="services" class="py-20 lg:py-32">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white reveal">My Services</h2>
-                    <p class="text-slate-400 mt-4 max-w-2xl mx-auto reveal">
-                        I offer a wide range of professional services to meet your needs.
+        <main>
+            <!-- Hero Section -->
+            <section id="home" class="min-h-screen flex items-center pt-24">
+                 <div class="container mx-auto px-6 text-center relative z-10">
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4 animate-fadeInUp" style="animation-delay: 200ms;">
+                        Expert Solutions in <span class="text-cyan-400">Tech & Design</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8 animate-fadeInUp" style="animation-delay: 400ms;">
+                        I provide professional services ranging from technical repairs and creative graphic design to in-depth academic research. Let's build something great together.
                     </p>
+                    <a href="#contact" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-transform duration-300 hover:scale-105 inline-block shadow-lg shadow-cyan-500/30 animate-fadeInUp" style="animation-delay: 600ms;">
+                        Get a Free Quote
+                    </a>
                 </div>
+            </section>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Service Card 1 -->
-                    <div class="bg-gray-900/50 border border-gray-700 p-8 rounded-2xl text-center transform hover:-translate-y-2 transition-all duration-300 reveal hover:shadow-lg hover:shadow-cyan-500/30">
-                        <div class="inline-block bg-cyan-500/10 text-cyan-400 p-4 rounded-full mb-6">
-                            <i data-lucide="smartphone-charging" class="h-8 w-8"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-3">Mobile Repairing</h3>
-                        <p class="text-slate-400">
-                            Expert repair services for all mobile phone brands, providing the best solutions for both software and hardware issues.
+            <!-- Services Section -->
+            <section id="services" class="py-20 lg:py-32">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white reveal">My Services</h2>
+                        <p class="text-slate-400 mt-4 max-w-2xl mx-auto reveal">
+                            I offer a wide range of professional services to meet your needs.
                         </p>
                     </div>
 
-                    <!-- Service Card 2 -->
-                    <div class="bg-gray-900/50 border border-gray-700 p-8 rounded-2xl text-center transform hover:-translate-y-2 transition-all duration-300 reveal hover:shadow-lg hover:shadow-cyan-500/30" style="transition-delay: 200ms;">
-                        <div class="inline-block bg-cyan-500/10 text-cyan-400 p-4 rounded-full mb-6">
-                            <i data-lucide="laptop" class="h-8 w-8"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-3">Laptop Repairing</h3>
-                        <p class="text-slate-400">
-                           Complete solutions for all laptop problems, including screen replacement, battery issues, and performance upgrades.
-                        </p>
-                    </div>
-
-                    <!-- Service Card 3 -->
-                    <div class="bg-gray-900/50 border border-gray-700 p-8 rounded-2xl text-center transform hover:-translate-y-2 transition-all duration-300 reveal hover:shadow-lg hover:shadow-cyan-500/30" style="transition-delay: 400ms;">
-                        <div class="inline-block bg-cyan-500/10 text-cyan-400 p-4 rounded-full mb-6">
-                            <i data-lucide="palette" class="h-8 w-8"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-3">Graphic Design</h3>
-                        <p class="text-slate-400">
-                            Creating stunning visuals for your brand and projects, including logos, banners, and social media posts.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="py-20 lg:py-32 bg-gray-900/50">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col lg:flex-row items-center gap-12">
-                    <div class="lg:w-1/2 reveal">
-                        <img src="naglok.jpg" class="rounded-2xl shadow-2xl">
-                    </div>
-                    <div class="lg:w-1/2 reveal" style="transition-delay: 200ms;">
-                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">About Me</h2>
-                        <p class="text-slate-400 mb-4">
-                            Starting with a simple hobby, I built my path in the world of technology and design. A passion for fixing things led me to master mobile and laptop repairs. Gradually, my interest leaned towards creativity, and I honed my skills in graphic design.
-                        </p>
-                        <p class="text-slate-400">
-                           To deepen my knowledge, I ventured into the world of academic research. Today, I combine all these skills to solve problems for my clients and turn great ideas into reality.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Research Section -->
-        <section id="research" class="py-20 lg:py-32">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white reveal">My Research Papers</h2>
-                    <p class="text-slate-400 mt-4 max-w-2xl mx-auto reveal">
-                        Here are some of my published research works.
-                    </p>
-                </div>
-                <div class="max-w-3xl mx-auto space-y-6">
-                    <!-- Research Paper 1 -->
-                    <div class="bg-gray-900/50 border border-gray-700 p-6 rounded-2xl reveal">
-                        <h3 class="text-xl font-bold text-cyan-400">Title of The Research Paper Here</h3>
-                        <p class="text-slate-400 mt-2">Provide a brief description of the paper here. Explain the topic and its findings. (You can edit this text).</p>
-                        <a href="#" class="inline-block mt-4 text-white font-semibold hover:text-cyan-300 transition-colors">Read Full Paper <i data-lucide="arrow-right" class="inline-block h-4 w-4 ml-1"></i></a>
-                    </div>
-                    <!-- Research Paper 2 -->
-                    <div class="bg-gray-900/50 border border-gray-700 p-6 rounded-2xl reveal" style="transition-delay: 200ms;">
-                        <h3 class="text-xl font-bold text-cyan-400">Title of Another Paper</h3>
-                        <p class="text-slate-400 mt-2">Provide a brief description of this paper as well. You can add as many papers as you like.</p>
-                        <a href="#" class="inline-block mt-4 text-white font-semibold hover:text-cyan-300 transition-colors">Read Full Paper <i data-lucide="arrow-right" class="inline-block h-4 w-4 ml-1"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 lg:py-32 bg-gray-900/50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white reveal">Get In Touch</h2>
-                    <p class="text-slate-400 mt-4 max-w-2xl mx-auto reveal">
-                        Have a project in mind or a question for me? Feel free to send a message.
-                    </p>
-                </div>
-                <div class="max-w-2xl mx-auto bg-gray-900/50 border border-gray-700 p-8 rounded-2xl reveal">
-                    <form action="#" method="POST">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label for="name" class="block text-slate-400 mb-2">Your Name</label>
-                                <input type="text" id="name" name="name" class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all" placeholder="John Doe">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Service Card 1 -->
+                        <div class="bg-gray-900/50 border border-gray-700 p-8 rounded-2xl text-center transform hover:-translate-y-2 transition-all duration-300 reveal hover:shadow-lg hover:shadow-cyan-500/30">
+                            <div class="inline-block bg-cyan-500/10 text-cyan-400 p-4 rounded-full mb-6">
+                                <i data-lucide="smartphone-charging" class="h-8 w-8"></i>
                             </div>
-                            <div>
-                                <label for="email" class="block text-slate-400 mb-2">Your Email</label>
-                                <input type="email" id="email" name="email" class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all" placeholder="john.doe@example.com">
+                            <h3 class="text-2xl font-bold text-white mb-3">Mobile Repairing</h3>
+                            <p class="text-slate-400">
+                                Expert repair services for all mobile phone brands, providing the best solutions for both software and hardware issues.
+                            </p>
+                        </div>
+
+                        <!-- Service Card 2 -->
+                        <div class="bg-gray-900/50 border border-gray-700 p-8 rounded-2xl text-center transform hover:-translate-y-2 transition-all duration-300 reveal hover:shadow-lg hover:shadow-cyan-500/30" style="transition-delay: 200ms;">
+                            <div class="inline-block bg-cyan-500/10 text-cyan-400 p-4 rounded-full mb-6">
+                                <i data-lucide="laptop" class="h-8 w-8"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Laptop Repairing</h3>
+                            <p class="text-slate-400">
+                               Complete solutions for all laptop problems, including screen replacement, battery issues, and performance upgrades.
+                            </p>
+                        </div>
+
+                        <!-- Service Card 3 -->
+                        <div class="bg-gray-900/50 border border-gray-700 p-8 rounded-2xl text-center transform hover:-translate-y-2 transition-all duration-300 reveal hover:shadow-lg hover:shadow-cyan-500/30" style="transition-delay: 400ms;">
+                            <div class="inline-block bg-cyan-500/10 text-cyan-400 p-4 rounded-full mb-6">
+                                <i data-lucide="palette" class="h-8 w-8"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Graphic Design</h3>
+                            <p class="text-slate-400">
+                                Creating stunning visuals for your brand and projects, including logos, banners, and social media posts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="py-20 lg:py-32 bg-gray-900/50">
+                <div class="container mx-auto px-6">
+                    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                        <div class="lg:w-2/5 reveal">
+                            <img src="naglok.jpg" alt="About Shyanki Sakhare" class="rounded-2xl shadow-2xl">
+                        </div>
+                        <div class="lg:w-3/5 reveal" style="transition-delay: 200ms;">
+                            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">My Story: From Struggle to Skill</h2>
+                            <div class="text-slate-400 space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="text-cyan-400 mt-1 flex-shrink-0"><i data-lucide="home"></i></div>
+                                    <div>
+                                        <h3 class="font-semibold text-white">Humble Beginnings</h3>
+                                        <p>My journey started in a one-room house in Nagpur, facing immense financial hardships. These early challenges taught me the value of perseverance and hard work.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div class="text-cyan-400 mt-1 flex-shrink-0"><i data-lucide="wrench"></i></div>
+                                    <div>
+                                        <h3 class="font-semibold text-white">Discovering a Passion for Tech</h3>
+                                        <p>While working at a mobile shop to survive, I discovered a passion for electronics. This hands-on experience was my real classroom, leading me to master mobile and laptop repair and complete several skill development courses.</p>
+                                    </div>
+                                </div>
+                                 <div class="flex items-start gap-4">
+                                    <div class="text-cyan-400 mt-1 flex-shrink-0"><i data-lucide="heart-handshake"></i></div>
+                                    <div>
+                                        <h3 class="font-semibold text-white">Nalanda & A Mission to Serve</h3>
+                                        <p>Joining Nalanda Lab was a life-changing experience. Under the guidance of incredible mentors, I found my purpose. Inspired by their mission, I helped establish over 50 community learning labs across India, bringing education to those who need it most.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div class="text-cyan-400 mt-1 flex-shrink-0"><i data-lucide="graduation-cap"></i></div>
+                                    <div>
+                                        <h3 class="font-semibold text-white">Commitment to Lifelong Learning</h3>
+                                        <p>My belief in education led me to complete my graduation and I am now pursuing an MA in Education. My journey is proof that it's never too late to learn and grow. Every skill I offer today is built on a foundation of real-world experience and relentless determination.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="mb-6">
-                            <label for="message" class="block text-slate-400 mb-2">Your Message</label>
-                            <textarea id="message" name="message" rows="5" class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all" placeholder="Your project idea..."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research Section -->
+            <section id="research" class="py-20 lg:py-32">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white reveal">My Research Papers</h2>
+                        <p class="text-slate-400 mt-4 max-w-2xl mx-auto reveal">
+                            Here are some of my published research works. Click the ✨ button to get an AI summary!
+                        </p>
+                    </div>
+                    <div class="max-w-3xl mx-auto space-y-6">
+                        <!-- Research Paper 1 -->
+                        <div class="bg-gray-900/50 border border-gray-700 p-6 rounded-2xl reveal">
+                            <h3 class="text-xl font-bold text-cyan-400 research-title">The Impact of AI on UI/UX Design</h3>
+                            <p class="text-slate-400 mt-2 research-desc">This paper explores the growing influence of artificial intelligence on user interface and user experience design, analyzing new tools, automated design systems, and ethical considerations for designers in an AI-driven landscape.</p>
+                            <div class="mt-4 flex flex-wrap gap-4 items-center">
+                                <a href="#" class="inline-block text-white font-semibold hover:text-cyan-300 transition-colors">Read Full Paper <i data-lucide="arrow-right" class="inline-block h-4 w-4 ml-1"></i></a>
+                                <button class="summarize-btn bg-cyan-500/20 text-cyan-300 text-sm font-semibold px-4 py-2 rounded-lg hover:bg-cyan-500/40 transition-all">
+                                    ✨ Summarize with AI
+                                </button>
+                            </div>
                         </div>
-                        <div>
-                            <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg shadow-cyan-500/30">
-                                Send Message
-                            </button>
+                        <!-- Research Paper 2 -->
+                        <div class="bg-gray-900/50 border border-gray-700 p-6 rounded-2xl reveal" style="transition-delay: 200ms;">
+                            <h3 class="text-xl font-bold text-cyan-400 research-title">Advanced Laptop Repair Diagnostics</h3>
+                            <p class="text-slate-400 mt-2 research-desc">A deep dive into modern diagnostic techniques for complex laptop hardware failures, focusing on motherboard-level repairs. The paper covers component analysis, micro-soldering, and thermal imaging to identify faults that software diagnostics miss.</p>
+                             <div class="mt-4 flex flex-wrap gap-4 items-center">
+                                <a href="#" class="inline-block text-white font-semibold hover:text-cyan-300 transition-colors">Read Full Paper <i data-lucide="arrow-right" class="inline-block h-4 w-4 ml-1"></i></a>
+                                <button class="summarize-btn bg-cyan-500/20 text-cyan-300 text-sm font-semibold px-4 py-2 rounded-lg hover:bg-cyan-500/40 transition-all">
+                                    ✨ Summarize with AI
+                                </button>
+                            </div>
                         </div>
-                    </form>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Contact Section -->
+            <section id="contact" class="py-20 lg:py-32 bg-gray-900/50">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white reveal">Get In Touch</h2>
+                        <p class="text-slate-400 mt-4 max-w-2xl mx-auto reveal">
+                           Have a project in mind? Let me know! Or, get help from AI to draft your message.
+                        </p>
+                    </div>
+                    <div class="max-w-2xl mx-auto bg-gray-900/50 border border-gray-700 p-8 rounded-2xl reveal">
+                        <form action="#" method="POST" onsubmit="return false;">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-slate-400 mb-2">Your Name</label>
+                                    <input type="text" id="name" name="name" class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all" placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-slate-400 mb-2">Your Email</label>
+                                    <input type="email" id="email" name="email" class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all" placeholder="john.doe@example.com">
+                                </div>
+                            </div>
+                            <div class="mb-6 relative">
+                                <label for="message" class="block text-slate-400 mb-2">Your Message</label>
+                                <textarea id="message" name="message" rows="5" class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all" placeholder="Tell me about your project idea..."></textarea>
+                                <button type="button" id="refine-message-btn" class="absolute bottom-3 right-3 bg-gray-700 text-slate-300 text-xs font-semibold px-3 py-1 rounded-md hover:bg-cyan-500 hover:text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                                    ✨ Refine with AI
+                                </button>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg shadow-cyan-500/30">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900/50 border-t border-gray-800 py-8">
+            <div class="container mx-auto px-6 text-center text-slate-400">
+                <p>&copy; 2025 Shyanki Sakhare | Fix Design Hub. All Rights Reserved.</p>
+                <div class="flex justify-center space-x-6 mt-4">
+                    <a href="https://www.facebook.com/share/19xsZziLiK" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors"><i data-lucide="facebook"></i></a>
+                    <a href="https://www.instagram.com/do.you.have_it?igsh=N3R4NnU2eDRwdHU4" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors"><i data-lucide="instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/shyanki-sakhare-4ab76b1b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors"><i data-lucide="linkedin"></i></a>
                 </div>
             </div>
-        </section>
+        </footer>
+    </div>
 
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900/50 border-t border-gray-800 py-8">
-        <div class="container mx-auto px-6 text-center text-slate-400">
-            <p>&copy; 2024 Fix Design Hub. All Rights Reserved.</p>
-            <div class="flex justify-center space-x-6 mt-4">
-                <a href="https://www.facebook.com/share/19xsZziLiK" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors"><i data-lucide="facebook"></i></a>
-                <a href="https://www.instagram.com/do.you.have_it?igsh=N3R4NnU2eDRwdHU4" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors"><i data-lucide="instagram"></i></a>
-                <a href="https://www.linkedin.com/in/shyanki-sakhare-4ab76b1b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors"><i data-lucide="linkedin"></i></a>
+    <!-- AI Summary Modal -->
+    <div id="ai-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] hidden items-center justify-center p-4">
+        <div id="ai-modal-content" class="bg-gray-900 border border-gray-700 rounded-2xl shadow-2xl w-full max-w-2xl p-8 relative transform transition-all duration-300 scale-95 opacity-0">
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i data-lucide="x" class="h-6 w-6"></i>
+            </button>
+            <h3 class="text-2xl font-bold text-white mb-4 flex items-center gap-2"><i data-lucide="sparkles" class="text-cyan-400"></i> AI-Powered Summary</h3>
+            <div id="modal-body" class="text-slate-300 space-y-4 max-h-[60vh] overflow-y-auto">
+                <!-- Loading spinner -->
+                <div id="modal-loader" class="text-center py-8">
+                    <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-cyan-500 border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]" role="status">
+                        <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+                    </div>
+                    <p class="mt-4 text-slate-400">Gemini is thinking...</p>
+                </div>
+                <!-- AI Content -->
+                <p id="modal-text" class="hidden"></p>
             </div>
         </div>
-    </footer>
+    </div>
 
     <!-- Apni JS file se link karein -->
     <script src="script.js"></script>
 </body>
 </html>
-
 
