@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
         minWidth: 200.00,
         scale: 1.00,
         scaleMobile: 1.00,
-        color: 0x22d3ee,       // Cyan color for lines
-        backgroundColor: 0x0a0a0a, // Background color
+        color: 0x22d3ee,
+        backgroundColor: 0x0a0a0a,
         points: 10.00,
         maxDistance: 20.00,
         spacing: 15.00,
@@ -43,12 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // If the target has children with 'reveal-child', animate them sequentially
                 const children = entry.target.querySelectorAll('.reveal-child');
                 children.forEach((child, index) => {
                     setTimeout(() => {
                         child.classList.add('visible');
-                    }, index * 200); // 200ms delay between each child animation
+                    }, index * 200);
                 });
             }
         });
@@ -56,11 +55,29 @@ document.addEventListener('DOMContentLoaded', () => {
         threshold: 0.1
     });
 
-    // Observe main sections
     const revealElements = document.querySelectorAll('.reveal');
     revealElements.forEach(el => observer.observe(el));
-
-    // Also observe individual reveal-child elements if they are not inside a .reveal parent
     const revealChildrenNotInSection = document.querySelectorAll('.reveal-child:not(.reveal *)');
     revealChildrenNotInSection.forEach(el => observer.observe(el));
+
+    // --- Initialize Swiper for My Work Slider ---
+    const myWorkSwiper = new Swiper(".myWorkSwiper", {
+        loop: true,
+        spaceBetween: 30,
+        slidesPerView: 1,
+        centeredSlides: true,
+        autoplay: {
+            delay: 3000, // Auto-slide every 3 seconds
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+
 });
